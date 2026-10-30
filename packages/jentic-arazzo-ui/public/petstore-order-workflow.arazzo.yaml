@@ -72,8 +72,6 @@ workflows:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.body#/0 != null
-            context: $response.body
-            type: simple
         outputs:
           availablePets: $response.body
           bestMatchPet: $response.body#/0
@@ -94,8 +92,6 @@ workflows:
         successCriteria:
           - condition: $statusCode == 200
           - condition: $response.body#/id != null
-            context: $response.body
-            type: simple
         outputs:
           orderId: $response.body#/id
           orderStatus: $response.body#/status
