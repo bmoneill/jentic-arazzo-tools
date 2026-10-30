@@ -129,7 +129,6 @@ export interface StepDocumentation {
   description?: string;
   operationId?: string;
   operationPath?: string;
-  /** resolved HTTP method and path of the targeted operation */
   operation?: StepOperation;
   workflowId?: string;
   parameters?: (Parameter | ReusableObject)[];
@@ -152,8 +151,7 @@ export interface DocumentationSection {
 // ============================================================================
 
 /** @public */
-export type ArazzoNodeType =
-  'start' | 'end' | 'step' | 'workflowRef' | 'workflow' | 'externalWorkflow';
+export type ArazzoNodeType = 'start' | 'end' | 'step' | 'workflowRef' | 'workflow' | 'externalWorkflow';
 
 /** @public */
 export interface StepNodeData {
@@ -225,14 +223,7 @@ export type ArazzoNode = Node<ArazzoNodeData>;
 // ============================================================================
 
 /** @public */
-export type ArazzoEdgeType =
-  | 'sequential'
-  | 'success'
-  | 'failure'
-  | 'retry'
-  | 'bundled-success'
-  | 'bundled-failure'
-  | 'bundled-retry';
+export type ArazzoEdgeType = 'sequential' | 'success' | 'failure' | 'retry' | 'bundled-success' | 'bundled-failure' | 'bundled-retry';
 
 /** @public */
 export interface SequentialEdgeData {
